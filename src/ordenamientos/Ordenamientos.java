@@ -103,7 +103,7 @@ public class Ordenamientos {
         time_start = System.currentTimeMillis();
         int n = v.length, inc = n / 2;
         while (inc > 0) {
-            for (int i = inc + 1; i < n; i++) {
+            for (int i = inc; i < n; i++) {
                 int j = i - inc;
                 while (j >= 0) {
                     int k = j + inc;
