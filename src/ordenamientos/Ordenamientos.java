@@ -5,15 +5,13 @@ import static java.lang.Math.random;
 public class Ordenamientos {
 
     public static void main(String[] args) {
-        int v[] = {8,6,4,2,10,17,1,3};//new int[1000000];
-        /*
-        for (int i = 0; i < 1000000; i++) {
-            v[i] = (int) (random() * 1000000);
+        int v[] =new int[10000];
+        for (int i = 0; i < 10000; i++) {
+            v[i] = (int) (random() * 10000);
             if ((int) (random() * 2) + 1 == 2) {
                 v[i] = -v[i];
             }
         }
-        */
         System.out.println("shell sort has taken " + shell_sort(v) + " milliseconds");
         System.out.println("select sort has taken " + select_sort(v) + " milliseconds");
         System.out.println("insert sort has taken " + insert_sort(v) + " milliseconds");
@@ -35,10 +33,6 @@ public class Ordenamientos {
 
             }
         }
-        for (int i = 0; i < v.length; i++) {
-            System.out.print(v[i]+",");
-        }
-        System.out.println("");
         time_end = System.currentTimeMillis();
         return time_end - time_start;
     }
@@ -60,10 +54,6 @@ public class Ordenamientos {
                 v[menor] = temp;
             }
         }
-        for (int i = 0; i < v.length; i++) {
-            System.out.print(v[i]+",");
-        }
-        System.out.println("");
         time_end = System.currentTimeMillis();
         return time_end - time_start;
     }
@@ -71,15 +61,7 @@ public class Ordenamientos {
     public static long insert_sort(int v[]) {
         long time_start, time_end;
         time_start = System.currentTimeMillis();
-        int n = v.length;/*
-    for (int i = 0; i < n; i++) {
-        int temp=v[i],j=i;
-        while(j>0 && temp<v[j-1]){
-        v[j]=v[j-1];
-        j--;
-        }
-        v[j]=temp;
-    }*/
+        int n = v.length;
         int temp;
         for (int i = 1; i < n; i++) {
             for (int j = i; j > 0; j--) {
@@ -91,10 +73,6 @@ public class Ordenamientos {
             }
         }
         time_end = System.currentTimeMillis();
-        for (int i = 0; i < v.length; i++) {
-            System.out.print(v[i]+",");
-        }
-        System.out.println("");
         return time_end - time_start;
     }
 
@@ -119,10 +97,6 @@ public class Ordenamientos {
             }
             inc = inc / 2;
         }
-       for (int i = 0; i < v.length; i++) {
-            System.out.print(v[i]+",");
-        }
-        System.out.println("");
         time_end = System.currentTimeMillis();
         return time_end - time_start;
     }
